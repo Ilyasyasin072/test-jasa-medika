@@ -9,6 +9,7 @@ import CardPagePasien from '@/components/Pasien/CardPasienComponent.vue';
 import Auth from '@/pages/Auth/Login.vue';
 import PageNotFound from '@/pages/404/PageNotFound';
 import EditKelurahanPage from '@/pages/KelurahanView/EditKelurahan';
+import Register from '@/pages/Auth/Register.vue';
 // @ts-ignore
 const router = createRouter({
   history: createWebHistory(),
@@ -69,12 +70,20 @@ const router = createRouter({
     meta: {
       requiresAuth: true,
     },
-},
-{
-  path: '/login',
-  name: 'login',
-  component: Auth,
-},
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: Auth,
+  },
+  {
+    path: '/register/account',
+    name: 'register',
+    component: Register,
+    meta: {
+      requiresAuth: true,
+    },
+  },
 
     // { path: '*', component: PageNotFound }
     { path: '/:pathMatch(.*)*', component: PageNotFound },

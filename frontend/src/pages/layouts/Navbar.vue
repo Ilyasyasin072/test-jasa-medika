@@ -1,7 +1,7 @@
 <template>
     <div class="container-fluid" style="margin-bottom: 50px">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand bold" href="#"><router-link to="/" style="text-decoration: none;">Jasa Media</router-link></a>
+            <a class="navbar-brand bold" href="#"><router-link to="/" style="text-decoration: none;">Jasa Medika</router-link></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -21,6 +21,11 @@
                     <router-link to="/kelurahan/create" style="text-decoration: none;">
                          <a class="nav-link" href="#">Kelurahan</a>
                     </router-link>
+                </li>
+                <li class="nav-item" v-if="this.status.role == 1">
+                  <router-link to="/register/account" style="text-decoration: none;">
+                    <a class="nav-link" href="#">Register Account</a>
+                  </router-link>
                 </li>
                 <li class="nav-item" v-if="this.status.statusCode !== 200">
                   <router-link to="login" style="text-decoration: none;">
